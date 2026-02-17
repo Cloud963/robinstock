@@ -21,7 +21,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <TrendingUp className="h-8 w-8 text-blue-600" />
+            <TrendingUp className="h-8 w-8 text-robin-neon" />
             <span className="text-xl font-bold">RobinStock</span>
           </Link>
 
