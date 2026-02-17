@@ -43,6 +43,12 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Robinhood-inspired colors
+        robin: {
+          neon: "#00C805", // Robin green-yellow neon
+          dark: "#0D0D0D", // Almost black
+          light: "#FFFFFF", // Pure white
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

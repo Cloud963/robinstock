@@ -146,11 +146,11 @@ export default function Home() {
                   <Github className="h-4 w-4" />
                   GitHub
                 </a>
-                <a href="#" className="text-neutral-400 hover:text-robin-neon transition-colors inline-flex items-center gap-2">
+                <a href="https://github.com/Cloude963/robinstock/tree/master/docs" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-robin-neon transition-colors inline-flex items-center gap-2">
                   <FileText className="h-4 w-4" />
                   Documentation
                 </a>
-                <a href="#" className="text-neutral-400 hover:text-robin-neon transition-colors inline-flex items-center gap-2">
+                <a href="https://github.com/Cloude963/robinstock/tree/master/contracts" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-robin-neon transition-colors inline-flex items-center gap-2">
                   <Code className="h-4 w-4" />
                   Contracts
                 </a>
