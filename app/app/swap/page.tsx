@@ -182,7 +182,7 @@ export default function SwapPage() {
                   value={fromAmount}
                   onChange={(e) => setFromAmount(e.target.value)}
                   placeholder="0.0"
-                  className="flex-1 text-right text-2xl font-semibold bg-transparent outline-none"
+                  className="flex-1 min-w-0 text-right text-2xl font-semibold bg-transparent outline-none"
                 />
               </div>
               <button
@@ -248,7 +248,7 @@ export default function SwapPage() {
                   value={toAmount}
                   readOnly
                   placeholder="0.0"
-                  className="flex-1 text-right text-2xl font-semibold bg-transparent outline-none"
+                  className="flex-1 min-w-0 text-right text-2xl font-semibold bg-transparent outline-none"
                 />
               </div>
             </div>
