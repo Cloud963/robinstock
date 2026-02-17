@@ -133,7 +133,7 @@ export default function SwapPage() {
                 </div>
               </div>
             </div>
-          )
+          )}
 
           {/* Swap Card */}
           <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">

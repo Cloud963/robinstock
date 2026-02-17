@@ -142,18 +142,18 @@ export default function Home() {
             <div>
               <h3 className="text-white font-semibold mb-4">Resources</h3>
               <div className="flex flex-col gap-3 text-sm">
-                <a href="https://github.com/Cloud963/robinstock" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-robin-neon transition-colors inline-flex items-center gap-2">
+                <a href="https://github.com/Cloude963/robinstock" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-robin-neon transition-colors inline-flex items-center gap-2">
                   <Github className="h-4 w-4" />
                   GitHub
                 </a>
-                <a href="https://github.com/Cloud963/robinstock/tree/master/docs" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-robin-neon transition-colors inline-flex items-center gap-2">
+                <Link href="/documentation" className="text-neutral-400 hover:text-robin-neon transition-colors inline-flex items-center gap-2">
                   <FileText className="h-4 w-4" />
                   Documentation
-                </a>
-                <a href="https://github.com/Cloud963/robinstock/tree/master/contracts" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-robin-neon transition-colors inline-flex items-center gap-2">
+                </Link>
+                <Link href="/contracts" className="text-neutral-400 hover:text-robin-neon transition-colors inline-flex items-center gap-2">
                   <Code className="h-4 w-4" />
                   Contracts
-                </a>
+                </Link>
               </div>
             </div>
           </div>

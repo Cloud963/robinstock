@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "RobinStock - Decentralized Stock Trading",
   description: "Trade tokenized stocks on Arbitrum with RobinStock DEX",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

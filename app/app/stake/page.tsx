@@ -67,35 +67,35 @@ export default function StakePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12">
+    <div className="min-h-screen bg-black py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-8">Stake & Earn</h1>
+          <h1 className="text-3xl font-bold text-white mb-8">Stake & Earn</h1>
 
           {/* Overview Cards */}
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-gray-500 dark:text-gray-400">Total Staked</span>
-                <Lock className="h-5 w-5 text-blue-600" />
+                <span className="text-neutral-400">Total Staked</span>
+                <Lock className="h-5 w-5 text-robin-neon" />
               </div>
-              <div className="text-3xl font-bold">${totalStaked.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-white">${totalStaked.toLocaleString()}</div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-gray-500 dark:text-gray-400">Pending Rewards</span>
-                <Gift className="h-5 w-5 text-green-600" />
+                <span className="text-neutral-400">Pending Rewards</span>
+                <Gift className="h-5 w-5 text-robin-neon" />
               </div>
-              <div className="text-3xl font-bold text-green-500">{totalRewards.toFixed(2)} RBS</div>
+              <div className="text-3xl font-bold text-robin-neon">{totalRewards.toFixed(2)} RBS</div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
               {isConnected ? (
                 <button
                   onClick={handleClaimAll}
                   disabled={totalRewards === 0 || isClaiming}
-                  className="w-full h-full flex flex-col items-center justify-center gap-2 text-blue-600 hover:text-blue-700 disabled:text-gray-400"
+                  className="w-full h-full flex flex-col items-center justify-center gap-2 text-robin-neon hover:text-robin-neon/80 disabled:text-neutral-600"
                 >
                   {isClaiming ? (
                     <Loader2 className="h-8 w-8 animate-spin" />
@@ -113,21 +113,21 @@ export default function StakePage() {
           </div>
 
           {/* Staking Pools */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-            <div className="p-6 border-b dark:border-gray-700">
-              <h2 className="text-xl font-bold">Staking Pools</h2>
+          <div className="bg-neutral-900 border border-neutral-800 rounded-xl">
+            <div className="p-6 border-b border-neutral-800">
+              <h2 className="text-xl font-bold text-white">Staking Pools</h2>
             </div>
-            <div className="divide-y dark:divide-gray-700">
+            <div className="divide-y divide-neutral-800">
               {STAKING_POOLS.map((pool, index) => (
                 <div key={index} className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-xl">
-                        <Coins className="h-6 w-6 text-blue-600" />
+                      <div className="p-3 bg-robin-neon/10 rounded-xl">
+                        <Coins className="h-6 w-6 text-robin-neon" />
                       </div>
                       <div>
-                        <div className="font-semibold text-lg">{pool.name}</div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">
+                        <div className="font-semibold text-lg text-white">{pool.name}</div>
+                        <div className="text-sm text-neutral-400">
                           TVL: ${pool.tvl.toLocaleString()} • {pool.lockPeriod}
                         </div>
                       </div>
@@ -135,27 +135,27 @@ export default function StakePage() {
 
                     <div className="flex items-center gap-6">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-green-500">{pool.apr}%</div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">APR</div>
+                        <div className="text-2xl font-bold text-robin-neon">{pool.apr}%</div>
+                        <div className="text-sm text-neutral-400">APR</div>
                       </div>
 
                       {pool.userStaked > 0 && (
                         <div className="text-center">
-                          <div className="text-lg font-semibold">${pool.userStaked}</div>
-                          <div className="text-sm text-gray-500 dark:text-gray-400">Staked</div>
+                          <div className="text-lg font-semibold text-white">${pool.userStaked}</div>
+                          <div className="text-sm text-neutral-400">Staked</div>
                         </div>
                       )}
 
                       {pool.rewards > 0 && (
                         <div className="text-center">
-                          <div className="text-lg font-semibold text-green-500">{pool.rewards} RBS</div>
-                          <div className="text-sm text-gray-500 dark:text-gray-400">Rewards</div>
+                          <div className="text-lg font-semibold text-robin-neon">{pool.rewards} RBS</div>
+                          <div className="text-sm text-neutral-400">Rewards</div>
                         </div>
                       )}
 
                       <button
                         onClick={() => setSelectedPool(selectedPool === index ? null : index)}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        className="px-4 py-2 bg-robin-neon text-black rounded-lg hover:bg-robin-neon/90 transition-colors font-semibold"
                       >
                         {pool.userStaked > 0 ? "Manage" : "Stake"}
                       </button>
@@ -164,16 +164,16 @@ export default function StakePage() {
 
                   {/* Expanded Stake Form */}
                   {selectedPool === index && (
-                    <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
+                    <div className="mt-6 p-4 bg-neutral-800 rounded-xl">
                       <div className="flex flex-col md:flex-row gap-4">
                         <div className="flex-1">
-                          <label className="text-sm text-gray-500 dark:text-gray-400 mb-2 block">Amount to Stake</label>
+                          <label className="text-sm text-neutral-400 mb-2 block">Amount to Stake</label>
                           <input
                             type="number"
                             value={stakeAmount}
                             onChange={(e) => setStakeAmount(e.target.value)}
                             placeholder="0.0"
-                            className="w-full px-4 py-3 rounded-lg border dark:border-gray-600 dark:bg-gray-800 outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-4 py-3 rounded-lg border border-neutral-700 bg-neutral-900 text-white outline-none focus:ring-2 focus:ring-robin-neon"
                           />
                         </div>
                         <div className="flex gap-2 items-end">
@@ -184,7 +184,7 @@ export default function StakePage() {
                               <button
                                 onClick={handleStake}
                                 disabled={!stakeAmount || isStaking}
-                                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-400 flex items-center gap-2"
+                                className="px-6 py-3 bg-robin-neon text-black rounded-lg hover:bg-robin-neon/90 transition-colors disabled:bg-neutral-700 disabled:text-neutral-500 flex items-center gap-2 font-semibold"
                               >
                                 {isStaking ? (
                                   <>
@@ -199,7 +199,7 @@ export default function StakePage() {
                                 )}
                               </button>
                               {pool.userStaked > 0 && (
-                                <button className="px-6 py-3 border border-red-500 text-red-500 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors flex items-center gap-2">
+                                <button className="px-6 py-3 border border-red-500 text-red-500 rounded-lg hover:bg-red-500/10 transition-colors flex items-center gap-2">
                                   <Unlock className="h-5 w-5" />
                                   Unstake
                                 </button>
@@ -216,9 +216,9 @@ export default function StakePage() {
           </div>
 
           {/* Info Card */}
-          <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
-            <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">💰 Earn RBS Rewards</h3>
-            <p className="text-sm text-blue-700 dark:text-blue-400">
+          <div className="mt-6 p-4 bg-neutral-900 border border-neutral-800 rounded-xl">
+            <h3 className="font-semibold text-robin-neon mb-2">💰 Earn RBS Rewards</h3>
+            <p className="text-sm text-neutral-400">
               Stake your LP tokens to earn RBS governance tokens. The longer you stake, the more rewards you earn!
             </p>
           </div>
